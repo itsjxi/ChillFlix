@@ -40,11 +40,12 @@
   .logo{
     margin-left: 20px;
     font-size: xx-large;
-    padding: 0px;
+    padding: 5px;
     height: 50px;
     width: 160px;
     text-align: center;
     color: white;
+    box-sizing: border-box;
     text-shadow: rgba(250, 249, 249, 0.25) 0px 54px 55px, rgba(245, 243, 243, 0.12) 0px -12px 30px, rgba(239, 235, 235, 0.12) 0px 4px 6px, rgba(242, 239, 239, 0.17) 0px 12px 13px, rgba(244, 242, 242, 0.09) 0px -3px 5px;
     background: linear-gradient(120deg, #1091e0, #f70505); 
     background-clip: text;
@@ -254,7 +255,7 @@
     transition: all 1s ease;
     animation: slideAnimation 15s infinite linear;
   }
-  
+/*   
   @keyframes slideAnimation {
     0%, 15% {
       transform: translateX(0%);
@@ -274,7 +275,7 @@
     100% {
       transform: translateX(0%);
     }
-  }
+  } */
   
   .movieSlide {
     width: 110%;
@@ -315,17 +316,20 @@
     cursor: pointer;
   }
   
-  .detailsOfMovies {
+   .detailsOfMovies {
     background: rgba(27, 33, 46, 0.9);
     width: 28%;
-    height: 100%;
-    padding: 20px 30px;
+    height: 100%; 
+     padding: 20px 30px; 
     box-sizing: border-box;
     font-size: 12px;
     font-weight: 300;
     position: absolute;
+    top: 0px;
     right: 0px;
     display: none;
+    margin: 0px;
+    
   }
   
   .detailsOfMovies h2 {
@@ -365,7 +369,7 @@
   .indivisualDetails .detailsOfMovies {
     display: block;
     position: unset;
-    height: 500px;
+    height: 100%;
     background-color: var(--text-color);
   }
   

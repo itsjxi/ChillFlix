@@ -24,7 +24,7 @@ export class MoviesRenderer{
     imageBlock.classList.add("imageBlock")
     imageBlock.setAttribute("href","/movieInfo"+"_"+item.id)
     imageBlock.style.backgroundImage = `url(${item.image_large})`;
-    imageBlock.innerHTML = `<div class = "wishlist">+</div><div class = "details">
+    imageBlock.innerHTML = `<div class = "details">
                               <div class "nameAndGenre">
                                 <h3 class = "movieTitle">${item.title}</h3>
                                 <p class = "typeOfMovie">${item.genre.join(",")}</p>

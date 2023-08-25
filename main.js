@@ -1,4 +1,4 @@
-import './style.css'
+
 import'./index.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
