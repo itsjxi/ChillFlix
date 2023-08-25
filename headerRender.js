@@ -36,9 +36,9 @@ export class HeaderRenderer {
         home.classList.add("home")
         headerContent.appendChild(home);
         home.addEventListener("click",()=>{
-          history.pushState({}, "Home", "/home");
+    
           window.location.reload();
-          console.log("New URL:", window.location.href);
+      
         }
         )
     }
