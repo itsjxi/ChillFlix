@@ -36,7 +36,6 @@ export class HeaderRenderer {
         home.classList.add("home")
         headerContent.appendChild(home);
         home.addEventListener("click",()=>{
-    
           window.location.reload();
       
         }

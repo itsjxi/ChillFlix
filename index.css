@@ -535,6 +535,20 @@
   }
   
   }
+
+  @media (max-width:500px) {
+  .header{
+    width: 100vw;
+  }
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imageBlock{
+    width: 100%;
+  }
+
+  }
+
   
   
   
