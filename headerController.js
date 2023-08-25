@@ -42,7 +42,7 @@ export class HeaderController{
        let topRated = this.data.slice();
         topRated.sort((a,b) => b.rating.star - a.rating.star);
 
-        const topRatedMovies = this.data.slice(0,5);
+        const topRatedMovies = this.data.slice(0,10);
        
         this.topMoviesRendering(topRatedMovies)
       }
