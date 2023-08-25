@@ -47,8 +47,7 @@
     color: white;
     box-sizing: border-box;
     text-shadow: rgba(250, 249, 249, 0.25) 0px 54px 55px, rgba(245, 243, 243, 0.12) 0px -12px 30px, rgba(239, 235, 235, 0.12) 0px 4px 6px, rgba(242, 239, 239, 0.17) 0px 12px 13px, rgba(244, 242, 242, 0.09) 0px -3px 5px;
-    background: linear-gradient(120deg, #1091e0, #f70505); 
-    background-clip: text;
+    background: linear-gradient(120deg, #1091e0, #f70505);   
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
@@ -255,7 +254,7 @@
     transition: all 1s ease;
     animation: slideAnimation 15s infinite linear;
   }
-/*   
+  
   @keyframes slideAnimation {
     0%, 15% {
       transform: translateX(0%);
@@ -275,7 +274,7 @@
     100% {
       transform: translateX(0%);
     }
-  } */
+  }
   
   .movieSlide {
     width: 110%;

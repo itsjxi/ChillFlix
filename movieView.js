@@ -108,7 +108,7 @@ handelRouter(data){
     const crousel = document.createElement("div");
     crousel.classList.add("crousel");
     for (let i = 0; i < 5; i++) {
-      crousel.innerHTML += `<div class="movieSlide">${i}</div>`;
+      crousel.innerHTML += `<div class="movieSlide"></div>`;
       slideDiv.innerHTML += `<div class="pointers"></div>`;
     }
     
