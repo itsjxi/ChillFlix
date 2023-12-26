@@ -1,8 +1,5 @@
 
 import'./index.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
 import { fetchDataFromUrl } from './model.js';
 
@@ -11,9 +8,7 @@ import{MoviesRenderer} from "./movieView"
 // import {Top10MovieRecomendations} from './top10.js'
 
 async function processDataFunction() {
-  const finalData = await fetchDataFromUrl(
-    "https://imdb-api.projects.thetuhin.com/user/ur82525142/ratings"
-  );
+  const finalData = await fetchDataFromUrl("/movieData.json");
   console.log(finalData, "==============>");
 
  
