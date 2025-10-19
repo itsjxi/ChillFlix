@@ -1,20 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Vite App</title>
+    <title>ChillFlix - Modern Movie & TV Show Discovery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
   </head>
   <body>
-    <div class ="header"></div>
-    <div class ="sidebar"></div>
-    <div class = "slider"></div>
-    <div class = "container"></div>
-    <div class = "footer"></div>
+    <div id="app">
+      <!-- Desktop Header -->
+      <header class="header desktop-header">
+        <div class="container">
+          <div class="header-content">
+            <div class="header-left">
+              <a href="#/" class="logo">ChillFlix</a>
+              <nav>
+                <ul class="nav-menu">
+                  <li><a href="#/">Home</a></li>
+                  <li><a href="#/movies">Movies</a></li>
+                  <li><a href="#/tv">TV Shows</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div id="searchContainer" class="search-container"></div>
+            <div class="header-right">
+              <div class="genre-dropdown">
+                <button class="genre-btn" id="genreBtn">Genres ▼</button>
+                <div class="genre-popup" id="genrePopup">
+                  <div class="genre-popup-header">
+                    <h3 class="genre-popup-title">Select Genres</h3>
+                  </div>
+                  <div class="genre-grid" id="genreGrid"></div>
+                  <div class="genre-popup-actions">
+                    <button class="genre-apply-btn" id="genreApply">Apply</button>
+                    <button class="genre-cancel-btn" id="genreCancel">Cancel</button>
+                  </div>
+                </div>
+              </div>
+              <button class="theme-toggle" id="themeToggle">☀️</button>
+            </div>
+          </div>
+        </div>
+      </header>
 
-    <script type="module" src="/main.js"></script>
+      <!-- Mobile Header -->
+      <header class="header mobile-header">
+        <div class="mobile-header-top">
+          <a href="#/" class="mobile-logo">ChillFlix</a>
+          <div class="mobile-header-right">
+            <button class="mobile-theme-toggle" id="mobileThemeToggle">☀️</button>
+          </div>
+        </div>
+        <div class="mobile-search-container" id="mobileSearchContainer"></div>
+      </header>
+
+      <main class="main-content">
+        <!-- Hero Section -->
+        <section id="heroSection" class="hero-section"></section>
+
+        <!-- Filters -->
+        <section id="filtersSection" class="filters-section">
+          <div class="container">
+            <div id="filtersContainer"></div>
+          </div>
+        </section>
+
+        <!-- Genre Chips -->
+        <section id="genreChips" class="genre-section">
+          <div class="container"></div>
+        </section>
+
+        <!-- Trending Sections -->
+        <section id="trendingNow" class="content-section"></section>
+        <section id="topMovies" class="content-section"></section>
+        <section id="topTV" class="content-section"></section>
+
+        <!-- Main Grid for Infinite Scroll -->
+        <section class="movies-section">
+          <div class="container">
+            <div class="section-header">
+              <h2>Popular Movies</h2>
+              <div class="pagination-info">
+                <span id="currentPage">Page 1</span>
+              </div>
+            </div>
+            <div id="mainGrid" class="movies-grid"></div>
+            <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+              <div class="loading-spinner"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Search Results Section -->
+        <section id="searchSection" class="search-results-section" style="display: none;">
+          <div class="container">
+            <div id="searchHeader" class="search-header"></div>
+            <div id="searchResults" class="movies-grid"></div>
+          </div>
+        </section>
+
+        <!-- Detail Section -->
+        <section id="detailSection" class="detail-section" style="display: none;">
+          <div id="detailContainer"></div>
+        </section>
+      </main>
+
+      <!-- Wishlist Tab -->
+      <button class="wishlist-tab" id="wishlistTab">
+        Wishlist
+      </button>
+
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div>
+            <h3>My Wishlist</h3>
+            <p>Your saved movies & shows</p>
+          </div>
+          <button class="sidebar-close" id="sidebarClose">✕</button>
+        </div>
+        <div class="sidebar-content">
+          <div id="wishlistContainer" class="wishlist-grid"></div>
+        </div>
+        <div class="sidebar-footer">
+          <button class="clear-wishlist" id="clearWishlist">Clear All</button>
+        </div>
+      </aside>
+    </div>
+
+    <script type="module" src="./main.js"></script>
   </body>
 </html>

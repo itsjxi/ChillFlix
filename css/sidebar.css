@@ -1,0 +1,218 @@
+.sidebar {
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-primary);
+  transition: background-color var(--transition-base);
+  position: fixed;
+  top: 60px;
+  right: -400px;
+  width: 400px;
+  height: calc(100vh - 60px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar.open ~ .wishlist-tab {
+  display: none;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-4) var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--border-primary);
+  flex-shrink: 0;
+}
+
+.sidebar-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: var(--text-xl);
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.sidebar-close:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-footer {
+  padding: var(--space-4);
+  border-top: 1px solid var(--border-primary);
+  flex-shrink: 0;
+}
+
+.clear-wishlist {
+  background: var(--error);
+  color: white;
+  border: none;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition: var(--transition-base);
+  width: 100%;
+}
+
+.clear-wishlist:hover {
+  background: #e53e3e;
+  transform: translateY(-1px);
+}
+
+.sidebar-header {
+  margin-bottom: var(--space-6);
+}
+
+.sidebar-header h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--space-2);
+}
+
+.sidebar-header p {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.wishlist-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--space-4);
+}
+
+.wishlist-item {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-primary);
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.wishlist-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.wishlist-poster {
+  width: 60px;
+  height: 90px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.wishlist-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wishlist-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.wishlist-title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.wishlist-year {
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  margin-bottom: var(--space-2);
+}
+
+.wishlist-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+}
+
+.wishlist-remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-base);
+  font-size: var(--text-sm);
+}
+
+.wishlist-remove:hover {
+  color: var(--error);
+  background: rgba(255, 71, 87, 0.1);
+}
+
+.empty-wishlist {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.empty-wishlist-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-4);
+  opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+  #app {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "header"
+      "main";
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    top: 0;
+    height: 100vh;
+    padding-top: 100px;
+  }
+  
+  .sidebar-header {
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,121 @@
+.hero-section {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  border-radius: 0 0 20px 20px;
+}
+
+.hero-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  backdrop-filter: blur(1px);
+}
+
+.hero-info {
+  position: relative;
+  z-index: 2;
+  padding: 60px;
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.9);
+  color: white;
+  line-height: 1.1;
+}
+
+.hero-overview {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-meta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-meta span {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+}
+
+.hero-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-dot.active {
+  background: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60vh;
+  }
+  
+  .hero-info {
+    padding: 30px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-overview {
+    font-size: 1rem;
+  }
+}

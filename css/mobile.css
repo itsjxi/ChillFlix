@@ -1,0 +1,521 @@
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  /* Header */
+  .header {
+    padding: 10px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.9);
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .header-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 1.5rem !important;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  /* Search */
+  .search-container {
+    width: 100%;
+    order: 3;
+  }
+  
+  .mobile-header-top {
+    padding: 0 15px !important;
+  }
+  
+  .mobile-search-container {
+    padding: 0 15px !important;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    min-height: 44px !important;
+  }
+  
+  .search-bar input {
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+    height: 44px !important;
+    line-height: 1.2 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    height: 50vh;
+    margin-bottom: 20px;
+  }
+  
+  .hero-info {
+    padding: 20px 15px;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 8px;
+  }
+  
+  .hero-overview {
+    font-size: 0.9rem !important;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .hero-meta {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-meta span {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .hero-actions .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .watchlist-hero {
+    display: none !important;
+  }
+  
+  /* Movies Grid */
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px;
+    padding: 0 15px;
+  }
+  
+  .movie-card {
+    margin-bottom: 15px;
+  }
+  
+  .movie-poster {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .movie-overlay {
+    padding: 8px;
+    opacity: 1 !important;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(0, 0, 0, 0.8) 100%
+    ) !important;
+  }
+  
+  .watchlist-btn {
+    position: absolute !important;
+    bottom: 8px !important;
+    right: 8px !important;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 12px !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 15 !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  .watchlist-btn:hover,
+  .watchlist-btn:focus,
+  .watchlist-btn:active {
+    background: rgba(255, 107, 107, 0.8) !important;
+    border-color: rgba(255, 107, 107, 0.8) !important;
+    transform: none !important;
+    outline: none !important;
+  }
+  
+  .watchlist-btn.active {
+    background: rgba(255, 107, 107, 0.8) !important;
+    border-color: rgba(255, 107, 107, 0.8) !important;
+  }
+  
+  .rating-display,
+  .rating {
+    position: absolute !important;
+    top: 8px !important;
+    left: 8px !important;
+    font-size: 0.8rem !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    padding: 4px 8px !important;
+    border-radius: 12px !important;
+    border: 2px solid #ffd700 !important;
+    z-index: 14 !important;
+  }
+  
+  .movie-info {
+    padding: 8px 4px;
+  }
+  
+  .movie-title {
+    font-size: 0.9rem !important;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  
+  .movie-year {
+    font-size: 0.8rem;
+  }
+  
+  /* Horizontal Sections */
+  .content-section {
+    margin-bottom: 25px;
+  }
+  
+  .section-header {
+    padding: 0 15px;
+    margin-bottom: 15px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .horizontal-scroll {
+    padding: 0 15px;
+    gap: 12px;
+  }
+  
+  .horizontal-scroll .movie-card {
+    min-width: 140px;
+    margin-bottom: 0;
+  }
+  
+  /* Detail Page */
+  .detail-hero {
+    height: 60vh;
+  }
+  
+  .detail-content {
+    flex-direction: column;
+    padding: 20px 15px;
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .detail-poster {
+    align-self: center;
+    margin-bottom: 20px;
+    display: none;
+  }
+  
+  .detail-poster img {
+    width: 200px !important;
+    height: 300px !important;
+  }
+  
+  .detail-info {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .detail-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .detail-overview {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .detail-meta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+  }
+  
+  .detail-meta > * {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  
+  .detail-actions {
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .detail-actions .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    min-width: 120px;
+  }
+  
+  .detail-rating {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    padding: 8px 12px !important;
+    border-radius: 20px !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: white !important;
+    border: 2px solid #ffd700 !important;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3) !important;
+  }
+  
+  .detail-rating .star {
+    color: #ffd700 !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Tabs */
+  .tab-buttons {
+    padding: 0 15px;
+    gap: 8px;
+  }
+  
+  .tab-btn {
+    padding: 8px 16px !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+  }
+  
+  .tab-content {
+    padding: 0 15px;
+  }
+  
+  /* Cast Grid */
+  .cast-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px;
+  }
+  
+  .cast-card img {
+    height: 180px !important;
+  }
+  
+  /* Similar Grid */
+  .similar-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    z-index: 2000 !important;
+    transition: right 0.3s ease !important;
+    overflow-y: auto !important;
+  }
+  
+  .sidebar.open {
+    right: 0 !important;
+  }
+  
+  .sidebar-content {
+    height: calc(100vh - 120px) !important;
+    overflow-y: auto !important;
+  }
+  
+  .wishlist-tab {
+    position: fixed !important;
+    top: 50% !important;
+    right: -1px !important;
+    transform: translateY(-50%) rotate(0deg) !important;
+    transform-origin: center !important;
+    padding: 10px 6px !important;
+    background: #ff6b35 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px 0px 0 6px !important;
+    cursor: pointer !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4) !important;
+    z-index: 1000 !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    white-space: nowrap !important;
+  }
+  
+  .wishlist-tab.open {
+    background: #d14d20 !important;
+    box-shadow: 0 6px 25px rgba(255, 107, 53, 0.8) !important;
+  }
+  
+  .sidebar-header {
+    padding: 15px;
+  }
+  
+  .wishlist-grid {
+    padding: 0 15px;
+  }
+  
+  .wishlist-item {
+    padding: 10px;
+  }
+  
+  .wishlist-poster img {
+    width: 60px !important;
+    height: 90px !important;
+  }
+  
+  /* Genre Popup */
+  .genre-popup {
+    width: 90vw !important;
+    max-width: none !important;
+    left: 5vw !important;
+    right: 5vw !important;
+  }
+  
+  .genre-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+  }
+  
+  .genre-item {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .btn-sm {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  /* Container */
+  .container {
+    padding: 0 15px;
+  }
+  
+  /* Loading */
+  .loading-indicator {
+    padding: 20px;
+  }
+  
+  /* Search Suggestions */
+  .search-suggestions {
+    margin: 0 15px;
+    border-radius: 12px;
+  }
+  
+  .suggestion-item {
+    padding: 10px;
+  }
+  
+  .suggestion-item img {
+    width: 40px !important;
+    height: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .movies-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px;
+    padding: 0 10px !important;
+  }
+  
+  .movie-card {
+    margin-bottom: 10px !important;
+  }
+  
+  .watchlist-btn {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 10px !important;
+    bottom: 6px !important;
+    right: 6px !important;
+  }
+  
+  .rating-display,
+  .rating {
+    top: 6px !important;
+    right: 6px !important;
+    left: auto !important;
+    font-size: 0.7rem !important;
+    padding: 2px 6px !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    display: inline-flex !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .wishlist-tab {
+    padding: 10px 6px !important;
+    font-size: 10px !important;
+  }
+  
+  .detail-poster img {
+    width: 160px !important;
+    height: 240px !important;
+  }
+  
+  .cast-grid,
+  .similar-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  .genre-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .sidebar-header {
+    padding: 12px !important;
+  }
+  
+  .wishlist-grid {
+    padding: 0 12px !important;
+  }
+}
