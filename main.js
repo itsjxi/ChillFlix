@@ -79,6 +79,12 @@ class ChillFlixApp {
     if (sectionHeader) {
       sectionHeader.textContent = 'Popular Movies';
     }
+    
+    // Hide pagination info since we don't have pagination
+    const paginationInfo = document.querySelector('.pagination-info');
+    if (paginationInfo) {
+      paginationInfo.style.display = 'none';
+    }
   }
 
   showSearchResults(query) {
@@ -233,6 +239,7 @@ class ChillFlixApp {
       const genrePopup = document.getElementById('genrePopup');
       const genreApply = document.getElementById('genreApply');
       const genreCancel = document.getElementById('genreCancel');
+      const genreReset = document.getElementById('genreReset');
       
       if (genreGrid && genres.genres) {
         genreGrid.innerHTML = genres.genres.map(genre => `
@@ -261,27 +268,44 @@ class ChillFlixApp {
         });
 
         genreApply.addEventListener('click', async () => {
-          // Show loading state
-          const mainGrid = document.getElementById('mainGrid');
-          if (mainGrid) {
-            mainGrid.innerHTML = '<div class="loading-indicator"><div class="loading-spinner"></div><p>Applying filters...</p></div>';
-          }
+          // Show loading state immediately
+          this.showLoadingState('Applying filters...');
           
           this.currentGenres = [...this.tempGenres];
           this.updateGenreButton();
           genrePopup.classList.remove('show');
           
-          // Add small delay to show loading state
+          // Force screen change by hiding other sections
+          this.hideHomeSections();
+          
+          // Apply filters with delay to show loading
           setTimeout(async () => {
             await this.applyFilters();
             this.updateSectionHeader();
-          }, 300);
+            this.showFilteredView();
+          }, 500);
         });
 
         genreCancel.addEventListener('click', () => {
           this.tempGenres = [...this.currentGenres];
           this.updateGenreSelection();
           genrePopup.classList.remove('show');
+        });
+
+        genreReset.addEventListener('click', () => {
+          this.tempGenres = [];
+          this.currentGenres = [];
+          this.updateGenreSelection();
+          this.updateGenreButton();
+          genrePopup.classList.remove('show');
+          
+          // Show loading and reset to popular movies
+          this.showLoadingState('Resetting filters...');
+          setTimeout(async () => {
+            await this.applyFilters();
+            this.updateSectionHeader();
+            this.showHomePage();
+          }, 500);
         });
 
         document.addEventListener('click', (e) => {
@@ -933,6 +957,34 @@ class ChillFlixApp {
         this.toggleWatchlist(btn);
       });
     });
+  }
+
+  showLoadingState(message = 'Loading...') {
+    const mainGrid = document.getElementById('mainGrid');
+    if (mainGrid) {
+      mainGrid.innerHTML = `
+        <div class="loading-indicator" style="text-align: center; padding: 60px 20px;">
+          <div class="loading-spinner" style="margin: 0 auto 20px; width: 40px; height: 40px; border: 4px solid #333; border-top: 4px solid #667eea; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+          <p style="color: #666; font-size: 16px;">${message}</p>
+        </div>
+      `;
+    }
+  }
+
+  hideHomeSections() {
+    document.getElementById('heroSection').style.display = 'none';
+    document.getElementById('trendingNow').style.display = 'none';
+    document.getElementById('topMovies').style.display = 'none';
+    document.getElementById('topTV').style.display = 'none';
+  }
+
+  showFilteredView() {
+    document.querySelector('.movies-section').style.display = 'block';
+    // Hide pagination info since we don't have pagination
+    const paginationInfo = document.querySelector('.pagination-info');
+    if (paginationInfo) {
+      paginationInfo.style.display = 'none';
+    }
   }
 
   debounce(func, delay) {
